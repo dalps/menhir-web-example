@@ -8,4 +8,4 @@ rule f = parse
   | ")" { Parser.RPAREN }
   | variable as s { Parser.VAR s }
   | eof { EOF }
-  | _ as c { failwith (Printf.sprintf "Invalid character '%c'" c)} (* This case prevents the tab from crashing when an illegal character is input *)
+  | _ as c { failwith (Printf.sprintf "Invalid character '%c'" c)} (* This case prevents the tab crashing when the user enters an illegal character *)
