@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <script type="text/javascript" src="_build/default/main.bc.js"></script>
+  </head>
+  <body>
+    <h1>Menhir + js experiment</h1>
+    <h3>Input</h3>
+    <input
+      type="text"
+      placeholder="Enter a valid s-expression"
+      id="exp_input"
+    />
+    <h3>Output</h3>
+    <p id="output" style="font-family: 'Courier New'"></p>
+    <p id="error" style="color: red">Invalid syntax!</p>
+
+    <script type="text/javascript">
+      const input = document.getElementById("exp_input");
+      const p = document.getElementById("output");
+      const error = document.getElementById("error");
+
+      error.style.display = "none";
+
+      function parseAndShow(text) {
+        try {
+          var exp = myParseLib.parse(text);
+          p.innerText = myParseLib.toString(exp);
+
+          p.style.display = "";
+          error.style.display = "none";
+        } catch {
+          p.style.display = "none";
+          error.style.display = "";
+        }
+      }
+
+      if (input.value) {
+        parseAndShow(input.value);
+      }
+
+      input.addEventListener("input", (e) => {
+        if (!e.target.value) {
+          p.style.display = "none";
+          error.style.display = "none";
+          return;
+        }
+
+        parseAndShow(e.target.value);
+      });
+    </script>
+  </body>
+</html>

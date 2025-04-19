@@ -1,0 +1,16 @@
+(menhir
+ (modules parser))
+
+(ocamllex lexer)
+
+(executable
+ (name main)
+ (modes js)
+ (libraries js_of_ocaml)
+ (preprocess
+  (pps js_of_ocaml-ppx)))
+
+; (rule
+;  (targets foo.js)
+;  (action
+;   (copy _build/default/main.bc.js main.js)))
