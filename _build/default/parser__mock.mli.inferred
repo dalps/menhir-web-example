@@ -1,6 +1,0 @@
-type token = VAR of string | RPAREN | LPAREN | EOF
-val menhir_begin_marker : int
-val xv_list_expr_ : Exp.t list
-val xv_f : Exp.t
-val xv_expr : Exp.t
-val menhir_end_marker : int

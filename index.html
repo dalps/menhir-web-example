@@ -1,15 +1,19 @@
 <html>
   <head>
-    <script type="text/javascript" src="_build/default/main.bc.js"></script>
+    <script type="text/javascript" src="main.js"></script>
   </head>
   <body>
-    <h1>Menhir + js experiment</h1>
+    <h1>
+      <a href="https://cambium.inria.fr/~fpottier/menhir/">Menhir</a> web example
+    </h1>
     <h3>Input</h3>
-    <input
-      type="text"
+    <textarea
+      name="input"
+      id="input"
+      cols="80"
+      rows="8"
       placeholder="Enter a valid s-expression"
-      id="exp_input"
-    />
+    ></textarea>
     <h3>Output</h3>
     <p id="output" style="font-family: 'Courier New'"></p>
     <p id="error" style="color: red">Invalid syntax!</p>

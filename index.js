@@ -1,4 +1,4 @@
-const input = document.getElementById("exp_input");
+const input = document.getElementById("input");
 const p = document.getElementById("output");
 const error = document.getElementById("error");
 
